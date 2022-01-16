@@ -1,3 +1,4 @@
+
 # Professional ReadME Generator
 ![license-badge](https://img.shields.io/badge/license-MIT-blue) <br/>
 An application to use in the command line as a way to generate a professional ReadME for any project.
@@ -16,17 +17,13 @@ Download the code and appropriate files from GitHub. Run an NPM install.
 Consumers can use this project to create professional style ReadMEs for their own projects. 
 
 ## License
-
+This project is covered under the MIT license.
+  
 ## Contributing
-Users can contribute through forking the project, cloneing to user's own local computer, create changes to code, push to the main branch and create a pull request. 
+Users can contribute through pushing to the main branch and awaiting a Git Pull.
 ## Tests
-n/a
+null
 ## Questions
-How do I know where the file is downloaded on my local machine?<br/>
-
+How do I know where it is downloaded on my local machine?<br/>
 [Author's GitHub Profile](https://github.com/tiffsobczak)<br/>
 For any additional information, you can reach me at tiffsobczak@gmail.com
-
-## Video Link 
-https://youtu.be/8SRngwC0eOc
-
