@@ -1,25 +1,42 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+//creates license badge based on user "license" input
+function renderLicenseBadge(license) {
+  if (license === 'None') {
+    return '';
+  }
+  return `![license-badge](https://img.shields.io/badge/license-${license}-blue) <br/>`
+}
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
+//produces link to license on page given the user's "license" input
+function renderLicenseLink(license) {
+  if (license === 'None') {
+    return '';
+  }
+  return "- [License](#license)"
+}
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+//creates the "License" section based on user's "license" input
+function renderLicenseSection(license) {
+  if (license === 'None') {
+    return '';
+  }
 
-// TODO: Create a function to generate markdown for README
+  return `
+## License
+This project is covered under the ${license} license.
+  `
+}
+
+// Generates markdown for Readme
 function generateMarkdown(answers) {
   return `
 # ${answers.title}
+${renderLicenseBadge(answers.license)}
 ${answers.description}
 
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
+${renderLicenseLink(answers.license)}
 - [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
@@ -28,14 +45,15 @@ ${answers.description}
 ${answers.installation}
 ## Usage
 ${answers.usage}
-## License
-${answers.license}
+${renderLicenseSection(answers.license)}
 ## Contributing
 ${answers.contributing}
 ## Tests
 ${answers.tests}
 ## Questions
-${answers.questions}
+${answers.questions}<br/>
+[Author's GitHub Profile](https://github.com/${answers.username})<br/>
+For any additional information, you can reach me at ${answers.email}
 `;
 }
 

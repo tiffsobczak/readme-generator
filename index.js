@@ -2,19 +2,32 @@
 const inquirer = require('inquirer');
 const fs=require('fs');
 const generateMarkdown= require('./utils/generateMarkdown')
+
+//creates template for user input 
 const required = (attr, input) => {
     if (input) {
         return true;
+        //when there is no input
     } else {
         console.log(`Please enter valid input for ${attr}`);
         return false;
     }
 }
 
-// TODO: Include packages needed for this application
 
-// TODO: Create an array of questions for user input
+
+// Array of questions for user input
 const questions = [{
+    type: 'input',
+    name: 'username',
+    message: 'What is your GitHub username?',
+    validate: input => required("username", input)
+  }, {
+    type: 'input',
+    name: 'email',
+    message: 'What is your email?',
+    validate: input => required("email", input)
+  }, {
     type: 'input',
     name: 'title',
     message: 'What is the title of your readme?',
@@ -56,7 +69,7 @@ const questions = [{
     validate: input => required("questions", input)
   }];
 
-// TODO: Create a function to write README file
+// Creates readME
 function writeToFile(fileName, data) {
     return new Promise((resolve, reject)=>{
         fs.writeFile( `./dist/${fileName}`, data, err => {
@@ -76,7 +89,7 @@ function writeToFile(fileName, data) {
     });
 }
 
-// TODO: Create a function to initialize app
+// initializes app
 function init() {
     return inquirer.prompt(questions)
     .then(answers => {
